@@ -2,117 +2,71 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Биоинженерия тканей: как выращивают органы</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Биоинженерия тканей</title>
 <style>
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f6f8;
+    margin: 0;
+    background: #f4f7f9;
     color: #222;
-    line-height: 1.6;
-    .image-block {
-    margin: 25px 0;
-    text-align: center;
 }
-
-.image-block img {
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
-}
-
 header {
-    <div class="image-block">
-<img src="https://images.unsplash.com/photo-1581091870627-3e7c1c1a4c84" alt="Лаборатория биоинженерии">
-</div>
-background: linear-gradient(135deg, #0f766e, #0d9488);
-       padding: 40px 20px;
+    background: #0b6e4f;
+    color: white;
+    padding: 20px;
     text-align: center;
- }
-
+}
 section {
-    padding: 40px 20px;
+    padding: 30px;
     max-width: 1000px;
     margin: auto;
-    <div class="image-block">
-<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Схема биоинженерии тканей">
-</div>
-
 }
-
 h2 {
-    color: #0f766e;
-    margin-bottom: 20px;
+    color: #0b6e4f;
 }
-
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+}
 .scheme {
     display: flex;
+    gap: 10px;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
 }
-
 .step {
     background: white;
-    border-radius: 10px;
     padding: 15px;
-    width: 180px;
-    text-align: center;
+    border-radius: 10px;
     cursor: pointer;
-    border: 2px solid transparent;
-    transition: 0.3s;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-
 .step:hover {
-    border-color: #0d9488;
-    transform: translateY(-3px);
+    background: #e6f4ef;
 }
-
-.step.active {
-    border-color: #0f766e;
-    background: #ecfeff;
-}
-
-#description {
-    margin-top: 25px;
+#info {
+    margin-top: 20px;
+    padding: 15px;
     background: white;
-    padding: 20px;
     border-radius: 10px;
 }
-
 .myths {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
-
 .card {
     background: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
 }
-
-.card:hover {
-    background: #ecfeff;
-}
-
-.fact {
-    display: none;
-    margin-top: 10px;
-    color: #065f46;
-}
-
 footer {
-    background: #0f766e;
+    background: #0b6e4f;
     color: white;
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
+    padding: 15px;
 }
 </style>
 </head>
@@ -121,93 +75,122 @@ footer {
 
 <header>
 <h1>Биоинженерия тканей</h1>
-<p>Как выращивают органы вне организма человека</p>
+<p>Как выращивают органы вне организма</p>
 </header>
 
 <section>
-<h2>Что такое биоинженерия тканей</h2>
+<h2>Что это такое</h2>
 <p>
-Биоинженерия тканей — это направление науки, которое объединяет биологию, медицину и инженерные технологии. 
-Её цель — создание живых тканей и органов вне организма для замены повреждённых или утраченных частей тела.
+Биоинженерия тканей — область медицины и биотехнологий, занимающаяся созданием
+искусственных органов и тканей для трансплантации и медицинских исследований.
+Основная цель — замена повреждённых органов и стимуляция регенерации при минимальном
+риске отторжения.
 </p>
+<img src="image1.jpg" alt="Лабораторные исследования">
 </section>
 
 <section>
 <h2>Интерактивная схема: от клетки до органа</h2>
 
 <div class="scheme">
-<div class="step" onclick="showStep(0)">Клетка</div>
-<div class="step" onclick="showStep(1)">Размножение</div>
-<div class="step" onclick="showStep(2)">Каркас</div>
-<div class="step" onclick="showStep(3)">Рост ткани</div>
-<div class="step" onclick="showStep(4)">Орган</div>
+<div class="step" onclick="showInfo(1)">Клетки</div>
+<div class="step" onclick="showInfo(2)">Матрикс</div>
+<div class="step" onclick="showInfo(3)">Органоид</div>
+<div class="step" onclick="showInfo(4)">Биореактор</div>
+<div class="step" onclick="showInfo(5)">Готовый орган</div>
 </div>
 
-<div id="description">
+<div id="info">
 Нажмите на этап, чтобы узнать подробности.
 </div>
+
+<img src="image2.jpg" alt="Схема выращивания органов">
+</section>
+
+<section>
+<h2>Основные методы</h2>
+
+<h3>3D-биопечать</h3>
+<p>
+Послойная печать клеток и биополимеров позволяет воспроизводить сложные структуры,
+включая сосудистые сети.
+</p>
+
+<h3>Деклетелирование и рецеллюляризация</h3>
+<p>
+Из донорского органа удаляют клетки, сохраняя каркас, который затем заселяют клетками пациента.
+</p>
+
+<h3>Органоидные технологии</h3>
+<p>
+Мини-органы из стволовых клеток используются для исследований и тестирования лекарств.
+</p>
+
+<h3>Биореакторы</h3>
+<p>
+Контролируемая среда обеспечивает правильное формирование сложных тканей.
+</p>
+
+<img src="image3.jpg" alt="Органоид в чашке Петри">
+</section>
+
+<section>
+<h2>Материалы</h2>
+<p>
+Для создания тканеинженерных конструкций применяются биосовместимые и биоразрушаемые
+биополимеры, включая гидрогели, имитирующие внеклеточный матрикс.
+</p>
+<img src="image4.jpg" alt="Биоинженерная ткань">
 </section>
 
 <section>
 <h2>Мифы и факты</h2>
 
 <div class="myths">
-
-<div class="card" onclick="toggleFact(this)">
-<strong>Миф:</strong> Органы выращивают за несколько дней
-<div class="fact">
-<strong>Факт:</strong> Процесс может занимать недели и месяцы, так как клетки должны сформировать полноценную ткань.
+<div class="card">
+<h4>Миф</h4>
+<p>Органы выращивают за несколько дней.</p>
 </div>
-</div>
-
-<div class="card" onclick="toggleFact(this)">
-<strong>Миф:</strong> Все органы уже можно печатать на 3D-принтере
-<div class="fact">
-<strong>Факт:</strong> Пока успешно создаются только простые структуры, такие как кожа и хрящи.
-</div>
+<div class="card">
+<h4>Факт</h4>
+<p>Процесс может занимать месяцы и требует точного контроля.</p>
 </div>
 
-<div class="card" onclick="toggleFact(this)">
-<strong>Миф:</strong> Это полностью безопасно
-<div class="fact">
-<strong>Факт:</strong> Технологии активно развиваются, но требуют длительных клинических исследований.
+<div class="card">
+<h4>Миф</h4>
+<p>Искусственные органы полностью исключают отторжение.</p>
+</div>
+<div class="card">
+<h4>Факт</h4>
+<p>Иммунная совместимость остаётся серьёзной проблемой.</p>
 </div>
 </div>
 
-</div>
+</section>
+
+<section>
+<h2>Этические вопросы</h2>
+<p>
+Технологии вызывают споры, связанные с генетической модификацией,
+доступностью лечения и социальным неравенством.
+</p>
 </section>
 
 <footer>
-Образовательный проект • Биоинженерия тканей
+<p>Образовательный проект • Биоинженерия тканей</p>
 </footer>
 
 <script>
-const descriptions = [
-"Процесс начинается с получения живых клеток, чаще всего стволовых, которые способны превращаться в различные типы тканей.",
-
-"Клетки помещают в питательную среду, где они активно делятся и увеличивают свою численность.",
-
-"Используется биологический или синтетический каркас, который задаёт форму будущей ткани или органа.",
-
-"Клетки заселяют каркас, соединяются между собой и формируют функциональную ткань.",
-
-"После созревания получается зачаток органа, который может быть использован для исследований или трансплантации."
-];
-
-function showStep(index) {
-    const steps = document.querySelectorAll('.step');
-    steps.forEach(step => step.classList.remove('active'));
-    steps[index].classList.add('active');
-    document.getElementById('description').innerText = descriptions[index];
-}
-
-function toggleFact(card) {
-    const fact = card.querySelector('.fact');
-    fact.style.display = fact.style.display === 'block' ? 'none' : 'block';
+function showInfo(step) {
+    let text = "";
+    if (step === 1) text = "Исходные клетки, часто стволовые, получают от пациента или донора.";
+    if (step === 2) text = "Создаётся каркас — матрикс, поддерживающий рост клеток.";
+    if (step === 3) text = "Формируются органоиды — упрощённые версии органов.";
+    if (step === 4) text = "Ткань развивается в биореакторе при контролируемых условиях.";
+    if (step === 5) text = "Получается функциональный орган или его заготовка.";
+    document.getElementById("info").innerText = text;
 }
 </script>
 
 </body>
 </html>
-<div id="description">
-
