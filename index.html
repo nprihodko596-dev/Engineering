@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Биоинженерия тканей: как выращивают органы</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    color: #0f766e;
+    margin-bottom: 20px;
+}
+
+.scheme {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.step {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 180px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.step:hover {
+    border-color: #0d9488;
+    transform: translateY(-3px);
+}
+
+.step.active {
+    border-color: #0f766e;
+    background: #ecfeff;
+}
+
+#description {
+    margin-top: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.myths {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background: #ecfeff;
+}
+
+.fact {
+    display: none;
+    margin-top: 10px;
+    color: #065f46;
+}
+
+footer {
+    background: #0f766e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Биоинженерия тканей</h1>
+<p>Как выращивают органы вне организма человека</p>
+</header>
+
+<section>
+<h2>Что такое биоинженерия тканей</h2>
+<p>
+Биоинженерия тканей — это направление науки, которое объединяет биологию, медицину и инженерные технологии. 
+Её цель — создание живых тканей и органов вне организма для замены повреждённых или утраченных частей тела.
+</p>
+</section>
+
+<section>
+<h2>Интерактивная схема: от клетки до органа</h2>
+
+<div class="scheme">
+<div class="step" onclick="showStep(0)">Клетка</div>
+<div class="step" onclick="showStep(1)">Размножение</div>
+<div class="step" onclick="showStep(2)">Каркас</div>
+<div class="step" onclick="showStep(3)">Рост ткани</div>
+<div class="step" onclick="showStep(4)">Орган</div>
+</div>
+
+<div id="description">
+Нажмите на этап, чтобы узнать подробности.
+</div>
+</section>
+
+<section>
+<h2>Мифы и факты</h2>
+
+<div class="myths">
+
+<div class="card" onclick="toggleFact(this)">
+<strong>Миф:</strong> Органы выращивают за несколько дней
+<div class="fact">
+<strong>Факт:</strong> Процесс может занимать недели и месяцы, так как клетки должны сформировать полноценную ткань.
+</div>
+</div>
+
+<div class="card" onclick="toggleFact(this)">
+<strong>Миф:</strong> Все органы уже можно печатать на 3D-принтере
+<div class="fact">
+<strong>Факт:</strong> Пока успешно создаются только простые структуры, такие как кожа и хрящи.
+</div>
+</div>
+
+<div class="card" onclick="toggleFact(this)">
+<strong>Миф:</strong> Это полностью безопасно
+<div class="fact">
+<strong>Факт:</strong> Технологии активно развиваются, но требуют длительных клинических исследований.
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+Образовательный проект • Биоинженерия тканей
+</footer>
+
+<script>
+const descriptions = [
+"Процесс начинается с получения живых клеток, чаще всего стволовых, которые способны превращаться в различные типы тканей.",
+
+"Клетки помещают в питательную среду, где они активно делятся и увеличивают свою численность.",
+
+"Используется биологический или синтетический каркас, который задаёт форму будущей ткани или органа.",
+
+"Клетки заселяют каркас, соединяются между собой и формируют функциональную ткань.",
+
+"После созревания получается зачаток органа, который может быть использован для исследований или трансплантации."
+];
+
+function showStep(index) {
+    const steps = document.querySelectorAll('.step');
+    steps.forEach(step => step.classList.remove('active'));
+    steps[index].classList.add('active');
+    document.getElementById('description').innerText = descriptions[index];
+}
+
+function toggleFact(card) {
+    const fact = card.querySelector('.fact');
+    fact.style.display = fact.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+
+</body>
+</html>
